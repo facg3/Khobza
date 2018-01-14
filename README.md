@@ -1,14 +1,15 @@
 ## Khobza
 
 Khobza is a web app that is meant to help GSG staff and visitors order sandwiches
-from the cafeteria of GSS during the lunchtime. The main focus of the app is
+from the cafeteria of GSG during the lunchtime. The main focus of the app is
 to eliminate distraction resulting from leaving one's desk to get a sandwich. With our
 app, the users will save time and effort.
 
 
 Khobza allows a customer to select sandwich from the GSG cafeteria. If the sandwich does not exist, the app
-provides users with the names of nearby restaurants along with their phone numbers so that user can choose
+provides users with the names of nearby restaurants along with their phone numbers so that users can choose
 a restaurant to order from.  
+
 Our app gives the user the ability to customize their order through the 'notes' option we provide with the 'cofirm order' page.
 
 ## How to use our app:
