@@ -1,5 +1,6 @@
 ## Khobza
 
+![alt text] (https://i.imgur.com/KFWF7FX.png)
 
 Khobza is a web app that is meant to help GSG staff and visitors order sandwiches
 from the cafeteria of GSG during the lunchtime. The main focus of the app is
