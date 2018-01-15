@@ -1,0 +1,26 @@
+.container{
+	width: 1170px;
+	margin: 0 auto;
+}
+#js-header{
+	overflow: hidden;
+}
+#js-header .icons{
+	float: right;
+	padding: 2px;
+}
+#js-header .icons i{
+	padding-right: 7px;
+	cursor: pointer;
+	}
+	/*#js-header .icons .fa:focus {
+		color: #ff6c00;
+	}*/
+#js-header .logo{
+	float: left;
+}
+.line {
+left: 39%;
+position: absolute;
+top: 57px;
+}
