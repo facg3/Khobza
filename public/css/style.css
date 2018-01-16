@@ -1,3 +1,8 @@
+* {
+	    -webkit-box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	    box-sizing: border-box;
+	}
 .container{
 	width: 1170px;
 	margin: 0 auto;
@@ -11,11 +16,12 @@
 }
 #js-header .icons i{
 	padding-right: 7px;
-	cursor: pointer;
+	/*cursor: pointer;*/
+	color: black;
 	}
-	/*#js-header .icons .fa:focus {
+	#js-header .icons .fa:active {
 		color: #ff6c00;
-	}*/
+	}
 #js-header .logo{
 	float: left;
 }
@@ -23,4 +29,74 @@
 left: 39%;
 position: absolute;
 top: 57px;
+}
+.products{
+	padding-bottom: 80px ;
+}
+.products img{
+	border-radius: 2%;
+}
+main{
+	overflow: hidden;
+}
+main .main{
+	text-align: center;
+	padding-top: 60px
+}
+.product{
+	margin: 40px 0 20px 0;
+	width: 32%;
+	float: left;
+}
+
+.product .order .submit{
+  width: 42%;
+	border: none;
+	background-color: #ff6c00;
+	padding: 3px;
+	color: #fff;
+	float: right;
+	margin-right: 17px;
+}
+.product .order .number{
+width: 41%;
+float: left;
+}
+.continer {
+  position: relative;
+  width: 95%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+	border-radius: 2%;
+  background-color: rgba(255,108,0,0.5);
+}
+
+.continer:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+.order{
+	padding-top: 10px;
+	overflow: hidden;
 }
