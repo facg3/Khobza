@@ -1,0 +1,17 @@
+body{
+  text-align: center;
+}
+
+.users-table, th, td{
+  border: 2px solid black;
+  margin:auto;
+  width: 100%
+}
+.users-table{
+  border-spacing: 5px;
+
+}
+
+.table-cont{
+  text-align: center;
+}

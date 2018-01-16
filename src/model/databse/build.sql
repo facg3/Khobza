@@ -1,0 +1,41 @@
+BEGIN;
+
+DROP TABLE IF EXISTS users CASCADE;
+
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  phone_number INTEGER NOT NULL,
+  order_count INTEGER NOT NULL,
+  money_paid INTEGER NOT NULL,
+  banned BOOLEAN NOT NULL
+);
+
+CREATE TABLE products (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    url VARCHAR(100) NOT NULL,
+    price INTEGER NOT NULL,
+    description VARCHAR(250) NOT NULL
+
+)
+
+CREATE TABLE orders (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER FOREIGN KEY REFERENCES users(id),
+  num INTEGER NOT NULL,
+  product_id INTEGER FOREIGN KEY REFERENCES products(id),
+  notes VARCHAR(250) NOT NULL
+
+)
+
+CREATE TABLE suggestions (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER FOREIGN KEY REFERENCES users(id),
+  suggestion VARCHAR(250) NOT NULL
+
+)
+
+
+
+COMMIT;
