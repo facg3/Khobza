@@ -22,7 +22,7 @@ CREATE TABLE products  (
 CREATE TABLE orders(
   id SERIAL PRIMARY KEY,
 user_id FOREIGN KEY REFERENCES users(id),
-count IN
+count INTEGER NOT NULL,
 productss_id FOREIGN KEY REFERENCES products(id),
 notes   VARCHAR(250) NOT NULL
 );
