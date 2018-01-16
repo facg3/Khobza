@@ -1,4 +1,4 @@
-const dbConnection = require('./dbConnection');
+const dbConnection = require('./dbconnection');
 const fs = require ('fs');
 const path = require('path');
 
@@ -8,5 +8,6 @@ dbConnection.query(sql, (err, res)=>{
   if (err) console.log(err);
   else{
     console.log('res');
+    dbConnection.end();
   }
 })
