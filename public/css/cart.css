@@ -1,0 +1,68 @@
+
+.card {
+
+  width: 70%;
+  height: 600px;
+margin-left: 15%;
+  margin-top: 90px ;
+}
+
+table{ border-collapse: collapse;
+    width: 100%;
+  background-color: #F5F5F5}
+        th, td {
+           border: 1px solid black;
+           border-collapse: collapse;
+           padding: 15px;
+           height: 50px;
+   vertical-align: bottom;
+   margin-left: 90px;
+
+       }
+       #delete-btn {
+         width: 150px;
+       height: 40px;
+         margin-left: 50px;
+       }
+       #delete-btn:hover {
+           background-color: #f96f0d;
+           color :black ;
+       }
+       th, td {
+
+       }
+       #th1{
+         color:blue;
+       }
+
+       #confirm {
+         width: 20%;
+          background: blue;
+         position: relative;
+        height: 60px;
+        text-align: center;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        border-radius: 90px;
+        margin-top: 50px;
+        margin-left: 700px;
+        font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
+      color: white ;
+      text-transform: uppercase;
+
+       }
+
+       #confirm:hover {
+           background-color: #f96f0d;
+           color :black ;
+
+       }
+       #h{
+text-shadow: 3px 2px #f96f0d;
+font-size: 25px;
+padding-left: 55px;
+text-align: left;
+padding-top: 12px;
+font-weight: bold;
+}
