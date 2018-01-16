@@ -1,6 +1,6 @@
 BEGIN;
- DROP TABLE IF EXISTS users, products, orders, suggestion CASCADE;
-CREATE TABLE  (
+ DROP TABLE IF EXISTS appusers, products, orders, suggestions CASCADE;
+CREATE TABLE appusers (
   id SERIAL PRIMARY KEY,
    name VARCHAR(100) NOT NULL,
    mobile INTEGER NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE  (
 );
 
 
-CREATE TABLE  (
+CREATE TABLE products  (
   id SERIAL PRIMARY KEY,
    name VARCHAR(100) NOT NULL,
     url number (100) NOT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE  (
 );
 
 
-CREATE TABLE (
+CREATE TABLE orders(
   id SERIAL PRIMARY KEY,
 user_id FOREIGN KEY REFERENCES users(id),
 count IN
