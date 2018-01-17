@@ -11,6 +11,7 @@ CREATE TABLE users (
   banned BOOLEAN NOT NULL
 );
 
+DROP TABLE IF EXISTS products CASCADE;
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -19,7 +20,7 @@ CREATE TABLE products (
     description VARCHAR(250) NOT NULL
 
 )
-
+DROP TABLE IF EXISTS orders CASCADE;
 CREATE TABLE orders (
   id SERIAL PRIMARY KEY,
   user_id INTEGER FOREIGN KEY REFERENCES users(id),
@@ -28,7 +29,7 @@ CREATE TABLE orders (
   notes VARCHAR(250) NOT NULL
 
 )
-
+DROP TABLE IF EXISTS suggestions CASCADE;
 CREATE TABLE suggestions (
   id SERIAL PRIMARY KEY,
   user_id INTEGER FOREIGN KEY REFERENCES users(id),
