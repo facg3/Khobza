@@ -1,7 +1,7 @@
 const connection = require('../database/dbconnection.js');
 const insertData = (mobile, passowrd)=> {
   const sql ={
-    text : `select * from users where username = $1 and password = $2`
+    text : `select * from appusers where username = $1 and password = $2`
     values : [mobile, passowrd];
   }
   connection.query(sql, (err, data)=>{
