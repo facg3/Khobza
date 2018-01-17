@@ -1,6 +1,7 @@
 const express = require ('express');
 const path = require ('path');
 const exphbs = require('express-handlebars');
+
 const controllers = require('./controllers/index');
 const app = express();
 
@@ -15,4 +16,4 @@ app.engine('hbs',exphbs({
 }));
 app.use(controllers);
 app.set('port', process.env.PORT || 3000);
-module.exports=app;
+module.exports = app;
