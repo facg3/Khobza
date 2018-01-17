@@ -18,20 +18,21 @@
 
                 <div class="form-row">
                     <label>
-                        <span>Phone Number</span>
-                        <input type="text" name="phone_l">
+                        <span>PhoneNumber: 059 </span>
+                        <input type="text" name="phone_l" pattern = '^\d{7}$' required>
                     </label>
                 </div>
 
                 <div class="form-row">
                     <label>
                         <span>Password</span>
-                        <input name="password_l" type = "password">
+                        <input name="password_l" type = "password" required>
                     </label>
                 </div>
 
                 <div class="form-row">
-                    <button type="submit">Login</button>
+                    <button type="submit">Login</button><br>
+                    <h4 style = "text-align:center; margin-top: 15px;">Don't have an account? <a href = "#" class = "reg">Register!</a></h4>
                 </div>
 
             </form>
