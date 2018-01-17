@@ -4,6 +4,7 @@ CREATE TABLE appusers (
   id SERIAL PRIMARY KEY,
    name VARCHAR(100) NOT NULL,
    mobile INTEGER NOT NULL,
+   password VARCHAR(250) NOT NULL,
    order_count INTEGER NOT NULL,
    money_paid INTEGER NOT NULL,
    banned BOOLEAN NOT NULL
