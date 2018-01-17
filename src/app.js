@@ -1,6 +1,8 @@
 const express = require ('express');
 const path = require ('path');
 const exphbs = require('express-handlebars');
+
+const controllers = require('./controllers/index');
 const app = express();
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
@@ -12,5 +14,6 @@ app.engine('hbs',exphbs({
   partialsDir:path.join(__dirname,'views','partials'),
   defaultLayout:'main'
 }));
+app.use(controllers);
 app.set('port', process.env.PORT || 3000);
 module.exports = app;
