@@ -13,4 +13,4 @@ app.engine('hbs',exphbs({
   defaultLayout:'main'
 }));
 app.set('port', process.env.PORT || 3000);
-module.exports=app;
+module.exports = app;
