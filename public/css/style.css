@@ -36,9 +36,12 @@ top: 57px;
 .products img{
 	border-radius: 2%;
 }
+.fa1 {
+    color: #ff6c00;
+}
 main{
 	overflow: hidden;
-} 
+}
 main .main{
 	text-align: center;
 	padding-top: 60px
