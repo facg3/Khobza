@@ -12,6 +12,7 @@ router.get('/register',register.GETregister);
 router.get('/',homepage.homepage);
 router.get('/map',map.map);
 router.get('/suggestion',suggestion.suggestion);
+router.post('/suggestion',suggestion.makesuggestion);
 router.get('/cart',cart);
 router.get('/logout',logout);
 
