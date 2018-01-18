@@ -6,7 +6,8 @@ CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
   phone_number INTEGER NOT NULL,
-  banned BOOLEAN NOT NULL
+  password VARCHAR(100) NOT NULL,
+  banned BOOLEAN NOT NULL default false
 );
 
 CREATE TABLE products (
