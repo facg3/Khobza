@@ -12,11 +12,12 @@ queries.GetProduct( (err , products)=>{
 const POSThomepage =(req,res)=>{
   const idproduct = req.body.idproduct;
   const amount = req.body.quantity;
-  queries.makeOrder(,idproduct,amount,(err,res))=>{
+  queries.makeOrder('1',idproduct,amount,(err,res)=>{
     if (err) {
+      // res.redirect('/error')
       console.log(err);
     }else
     res.status(200).redirect('/home');
-  }
+  });
 }
 module.exports = {homepage,POSThomepage}

@@ -6,8 +6,6 @@ CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
   phone_number INTEGER NOT NULL,
-  order_count INTEGER NOT NULL,
-  money_paid INTEGER NOT NULL,
   banned BOOLEAN NOT NULL
 );
 
@@ -37,7 +35,7 @@ CREATE TABLE orders (
   user_id INTEGER REFERENCES users (id),
   product_id INTEGER REFERENCES products (id),
   amount INTEGER NOT NULL,
-  notes VARCHAR(250) NOT NULL
+  notes VARCHAR(250)
 
 );
 
@@ -45,7 +43,6 @@ CREATE TABLE suggestions (
   id SERIAL PRIMARY KEY,
   user_id INTEGER REFERENCES users (id),
   suggestion VARCHAR(250) NOT NULL
-
 );
 
 

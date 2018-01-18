@@ -21,6 +21,7 @@
   "dependencies": {
     "animate.css": "^3.5.2",
     "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
     "env2": "^2.1.1",
     "eslinter": "^3.2.1",
     "express": "^4.16.2",
