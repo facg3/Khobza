@@ -3,11 +3,14 @@ const suggestion = (req,res)=>{
 }
 const makesuggestion = (req,res) =>{
 const suggestionResult = req.body.suggestion;
-query.makesuggestion(1,suggestionResult,(err,Result) => {
+query.makesuggestion(1,suggestionResult,(errorConnectingToDB , Result) => {
   if (errorConnectingToDB) {
-    return res.send('errorConnectingToDB');
+    console.log(err);
   }
-  return res.send(suggestionResult);
+  else{
+    res.render();
+      res.redirect('/');
+  }
 });
 
 }
