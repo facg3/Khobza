@@ -10,23 +10,26 @@
 
         <div class="main-content">
 
-            <form class="form-basic" method="post" action="#">
+            <form class="form-basic" method="post" action="/login">
               <img src="https://i.imgur.com/KFWF7FX.png" alt="" style="width: 220px;">
                 <div class="form-title-row">
                     <h1>Log in</h1>
                 </div>
 
                 <div class="form-row">
+                  {{#if err}}
+                  <p>{{msg}}</p>
+                  {{/if}}
                     <label>
                         <span>Phone Number</span>
-                        <input type="text" name="phone_l">
+                        <input type="text" name="phone">
                     </label>
                 </div>
 
                 <div class="form-row">
                     <label>
                         <span>Password</span>
-                        <input name="password_l" type = "password">
+                        <input name="password" type = "password">
                     </label>
                 </div>
 

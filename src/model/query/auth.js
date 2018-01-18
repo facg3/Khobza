@@ -1,13 +1,27 @@
-const connection = require('../database/dbconnection.js');
-const insertData = (mobile, passowrd)=> {
+const connection = require('../databse/db_connection.js');
+const insertData = (name,number,password,cb) => {
   const sql ={
-    text : `select * from appusers where username = $1 and password = $2`
-    values : [mobile, passowrd];
+    text : `insert into users(name, phone_number, password)  VALUES ($1, $2, $3)`,
+    values : [name,number,password]
   }
   connection.query(sql, (err, data)=>{
-    if (err) console.log(err);
-  }) else {
-    cb(data.rows);
+    if (err) cb(err);
+   else {
+    cb(null, data.rows);
   }
+});
 }
-module.exports = insertData;
+
+  const selectData = (phone,cb) => {
+    const sql ={
+      text : `select * from users where phone_number = $1`,
+      values :[phone]
+    }
+  connection.query(sql, (err, data)=>{
+    if (err) cb(err);
+   else {
+    cb(null, data.rows);
+  }
+});
+}
+module.exports = {insertData,selectData};

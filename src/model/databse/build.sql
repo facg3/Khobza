@@ -6,9 +6,8 @@ CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
   phone_number INTEGER NOT NULL,
-  order_count INTEGER NOT NULL,
-  money_paid INTEGER NOT NULL,
-  banned BOOLEAN NOT NULL
+  password VARCHAR(100) NOT NULL,
+  banned BOOLEAN NOT NULL default false
 );
 
 DROP TABLE IF EXISTS products CASCADE;
@@ -19,23 +18,23 @@ CREATE TABLE products (
     price INTEGER NOT NULL,
     description VARCHAR(250) NOT NULL
 
-)
+);
 DROP TABLE IF EXISTS orders CASCADE;
 CREATE TABLE orders (
   id SERIAL PRIMARY KEY,
-  user_id INTEGER FOREIGN KEY REFERENCES users(id),
-  num INTEGER NOT NULL,
-  product_id INTEGER FOREIGN KEY REFERENCES products(id),
+  user_id INTEGER REFERENCES users(id),
+  product_id INTEGER REFERENCES products(id),
+  amount INTEGER NOT NULL,
   notes VARCHAR(250) NOT NULL
 
-)
+);
 DROP TABLE IF EXISTS suggestions CASCADE;
 CREATE TABLE suggestions (
   id SERIAL PRIMARY KEY,
-  user_id INTEGER FOREIGN KEY REFERENCES users(id),
+  user_id INTEGER REFERENCES users(id),
   suggestion VARCHAR(250) NOT NULL
 
-)
+);
 
 
 
