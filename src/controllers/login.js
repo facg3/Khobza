@@ -9,7 +9,8 @@ const GETlogin = (req,res)=>{
 }
 const PostLogin = (req,res)=>{
   const { phone } = req.body;
-  const password = req.body.password;
+  const password = req.body.password_l;
+  console.log(req.body)
   auth.selectData(phone,(err,data)=>{
     if(err) {console.log(err);}
     else if(data.length == 0){
@@ -24,6 +25,7 @@ const PostLogin = (req,res)=>{
           const token = jwt.sign(userData,process.env.SECRET_KEY);
           res.cookie('accessToken',token).redirect('/');
         }else {
+
           res.render('login',{layout:false,err:true,msg:'Password is not correct'});
         }
       });
