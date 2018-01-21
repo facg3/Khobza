@@ -75,7 +75,7 @@ test('the cart page is returned successfully', (t)=>{
 });
 
 test('should return the suggestion page', (t)=>{
-  reuest(app)
+  request(app)
   .get('/suggestion')
   .expect(200)
   .expect('Content-Type', /html/)
