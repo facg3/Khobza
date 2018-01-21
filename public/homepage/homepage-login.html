@@ -19,25 +19,25 @@
                 <div class="form-row">
                     <label>
                         <span>PhoneNumber: 059 </span>
-                        <input type="text" name="phone_l" pattern = '^\d{7}$' required>
+                        <input type="text" name="phone_l" pattern = '^\d{7}$' id = "number" required>
                     </label>
                 </div>
 
                 <div class="form-row">
                     <label>
                         <span>Password</span>
-                        <input name="password_l" type = "password" required>
+                        <input name="password_l" type = "password" id = "password" required>
                     </label>
                 </div>
-
+                <div class='error-cont'></div>
                 <div class="form-row">
                     <button type="submit">Login</button><br>
                     <h4 style = "text-align:center; margin-top: 15px;">Don't have an account? <a href = "#" class = "reg">Register!</a></h4>
                 </div>
-
+                <div class='error-cont'></div>
             </form>
 
         </div>
-
+<script type="text/javascript" src="homepage-login.js"></script>
   </body>
 </html>
