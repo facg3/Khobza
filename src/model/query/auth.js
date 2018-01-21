@@ -1,7 +1,7 @@
 const connection = require('../databse/db_connection.js');
 const insertData = (name,number,password,cb) => {
   const sql ={
-    text : `insert into users(name, phone_number, password)  VALUES ($1, $2, $3)`,
+    text : `insert into users(name, phone_number, password)  VALUES ($1, $2, $3) RETURNING id`,
     values : [name,number,password]
   }
   connection.query(sql, (err, data)=>{
