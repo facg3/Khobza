@@ -34,7 +34,7 @@ test('check the status code of home route', (t)=>{
 
 test('should return register page successfully', (t)=>{
   request(app)
-    .post('/register')
+    .get('/register')
     .expect(200)
     .expect('Content-Type', /html/)
     .end((err, res)=>{
@@ -49,8 +49,8 @@ test('should return register page successfully', (t)=>{
 
 test('should return the login page', (t) => {
   request(app)
-    .post('/login')
-    .expect(200)
+    .get('/login')
+    .expect(304)
     .expect('Content-Type', /html/)
     .end((err, res) => {
       if(err){
