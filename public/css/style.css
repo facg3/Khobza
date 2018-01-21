@@ -100,3 +100,52 @@ float: left;
 	padding-top: 10px;
 	overflow: hidden;
 }
+/* ***************************Animation********************************** */
+
+.icon-anim {
+    -ms-transform-origin: bottom;
+    -o-transform-origin: bottom;
+    -moz-transform-origin: bottom;
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom;
+
+    -ms-animation-name: icon-anim;
+    -o-animation-name: icon-anim;
+    -moz-animation-name: icon-anim;
+    -webkit-animation-name: icon-anim;
+    animation-name: icon-anim;
+
+    -ms-animation-duration: 0.2s;
+    -o-animation-duration: 0.2s;
+    -moz-animation-duration: 0.2s;
+    -webkit-animation-duration: 0.2s;
+    animation-duration: 0.2s;
+
+    -ms-animation-iteration-count: 3;
+    -o-animation-iteration-count: 3;
+    -moz-animation-iteration-count: 3;
+    -webkit-animation-iteration-count: 3;
+    animation-iteration-count: 3;
+}
+
+@-ms-keyframes icon-anim {
+  0% {-ms-transform: rotate(3deg); }
+  50% {-ms-transform: rotate(-3deg); }
+}
+@-o-keyframes icon-anim {
+  0% {-o-transform: rotate(3deg); }
+  50% {-o-transform: rotate(-3deg); }
+}
+@-moz-keyframes icon-anim {
+  0% {-moz-transform: rotate(3deg); }
+  50% {-moz-transform: rotate(-3deg); }
+}
+@-webkit-keyframes icon-anim {
+  0% {-webkit-transform: rotate(3deg); }
+  50% {-webkit-transform: rotate(-3deg); }
+}
+@keyframes icon-anim {
+  0% {transform: rotate(3deg); }
+  50% {transform: rotate(-3deg); }
+}
+/* ***************************Animation********************************** */

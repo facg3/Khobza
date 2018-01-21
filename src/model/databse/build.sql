@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS users, products, orders, suggestions CASCADE;
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
-  phone_number INTEGER NOT NULL,
+  phone_number INTEGER NOT NULL UNIQUE,
   password VARCHAR(100) NOT NULL,
   banned BOOLEAN NOT NULL default false
 );

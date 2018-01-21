@@ -8,7 +8,7 @@ const GETlogin = (req,res)=>{
   });
 }
 const PostLogin = (req,res)=>{
-  const phone = req.body.phone;
+  const { phone } = req.body;
   const password = req.body.password;
   auth.selectData(phone,(err,data)=>{
     if(err) {console.log(err);}

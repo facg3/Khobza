@@ -5,6 +5,9 @@
 
 
       <div class="container">
+        {{#if err}}
+        <p>{{mssg}}</p>
+        {{/if}}
         {{#each products}}
         <div class="product">
           <div class="continer">
@@ -16,7 +19,7 @@
 
             </div>
           </div>
-          <form class="order" method="post"  action="/home">
+          <form class="order" method="post"  action="/">
             <input type="hidden" name="idproduct" value={{id}}>
             <input type="number" name="quantity" min="1" max="10" placeholder="amount" class="number">
             <button type="submit" class="submit" id="submit">Order</button>

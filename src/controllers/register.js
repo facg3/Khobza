@@ -15,14 +15,16 @@ const PostRegister = (req, res)=>{
   if (password === conPassword) {
     hashpassword.hashedPassword(password, (err, hash)=>{
       auth.insertData(name,number,hash,(err,response)=>{
-        console.log("response",response);
-        const userData = {
+        if (err) {
+          res.render('register',{error:true,mssg:'This account already exists',layout:false})
+        }
+      else  {const userData = {
           id:response[0].id,
           name:name
         }
         const token = jwt.sign(userData,process.env.SECRET_KEY);
         res.cookie('accessToken',token);
-        res.redirect('/');
+        res.redirect('/');}
       });
     });
   }else{

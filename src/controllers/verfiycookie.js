@@ -4,7 +4,7 @@ const verifyCookie = (req, res,next) =>{
   if (req.cookies.accessToken === undefined) {
     console.log('req.cookies',req.cookies.accessToken);
      res.redirect('/login');
-  }else if(req.url !== '/login' && req.url !=='/register'){
+  }else{
       jwt.verify(req.cookies.accessToken,process.env.SECRET_KEY,(err,decoded)=>{
         if (err) {
           res.clearCookie('accessToken');
@@ -14,9 +14,10 @@ const verifyCookie = (req, res,next) =>{
           next();
         }
       });
-} else {
-  next();
 }
+// else {
+//   next();
+// }
 
 }
 module.exports = verifyCookie;

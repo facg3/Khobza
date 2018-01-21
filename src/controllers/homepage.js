@@ -1,23 +1,29 @@
 const queries = require('../model/query/queries');
 const homepage = (req,res)=>{
-queries.GetProduct( (err , products)=>{
+queries.GetProduct((err , products)=>{
   if(err){
-    console.log(err);
+    res.redirect("/error");
   }
   else {
-    res.status(200).render('homepage',{products:products});
+    res.render('homepage',{products:products});
   }
 });
 }
 const POSThomepage =(req,res)=>{
-  const idproduct = req.body.idproduct;
-  const amount = req.body.quantity;
-  queries.makeOrder(req.user.id,idproduct,amount,(err,res)=>{
+  const { quantity, idproduct } = req.body;
+    queries.makeOrder(req.user.id,idproduct,quantity,(err,data)=>{
     if (err) {
-      // res.redirect('/error')
-      console.log(err);
+      res.redirect("/error");
     }else
-    res.status(200).redirect('/');
+    queries.GetProduct((err , products)=>{
+      if(err){
+        console.log(err);
+      }
+      else {
+        res.status(200).render('homepage',{products:products});
+      }
+    });
   });
+
 }
 module.exports = {homepage,POSThomepage}

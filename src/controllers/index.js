@@ -19,7 +19,7 @@ router.get('/map',verfiycookie,map.map);
 router.get('/suggestion',verfiycookie,suggestion.suggestion);
 router.get('/cart',verfiycookie,cart);
 router.get('/logout',logout);
-// router.get('*',error);
+router.get('*',error);
 
 
 
