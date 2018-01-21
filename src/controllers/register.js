@@ -17,6 +17,7 @@ const PostRegister = (req, res)=>{
       auth.insertData(name,number,hash,(err,response)=>{
         if (err) {
           res.render('register',{error:true,mssg:'This account already exists',layout:false})
+          console.log("bullshit", err);
         }
       else  {const userData = {
           id:response[0].id,
