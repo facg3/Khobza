@@ -3,23 +3,26 @@
   <head>
     <meta charset="utf-8">
     <title>Khobza</title>
-    <link rel="stylesheet" href="homepage-login.css">
+    <link rel="stylesheet" href="./css/homepage-login.css">
   </head>
   <body>
     <br><br><br><br>
 
         <div class="main-content">
 
-            <form class="form-basic" method="post" action="#">
+            <form class="form-basic" method="post" action="/login">
               <img src="https://i.imgur.com/KFWF7FX.png" alt="" style="width: 220px;">
                 <div class="form-title-row">
                     <h1>Log in</h1>
                 </div>
 
                 <div class="form-row">
+                  {{#if err}}
+                  <p>{{msg}}</p>
+                  {{/if}}
                     <label>
-                        <span>PhoneNumber: 059 </span>
-                        <input type="text" name="phone_l" pattern = '^\d{7}$' id = "number" required>
+                        <span>Phone Number</span>
+                        <input type="text" name="phone">
                     </label>
                 </div>
 
