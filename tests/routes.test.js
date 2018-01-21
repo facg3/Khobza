@@ -67,40 +67,42 @@ test('the cart page is returned successfully', (t)=>{
     .expect(200)
     .expect('Content-Type', /html/)
     .end(err, res)=>{
-      t.error(err)
+      if(err){
+        t.error(err)
+      }
     }else{
-      t.equal(res.result, 200, 'cart page is returned successfully')
-      t.end();
+        t.equal(res.result, 200, 'cart page is returned successfully')
+        t.end();
     }
 });
 
 test('should return the suggestion page', (t)=>{
   request(app)
-  .get('/suggestion')
-  .expect(200)
-  .expect('Content-Type', /html/)
-  .end(err, res)=>{
-    if(err){
-      t.error(err)
+    .get('/suggestion')
+    .expect(200)
+    .expect('Content-Type', /html/)
+    .end(err, res)=>{
+      if(err){
+        t.error(err)
     }else{
-      t.equal(res.result, 200, 'suggestion page is returnes successfully')
-      t.end();
+        t.equal(res.result, 200, 'suggestion page is returnes successfully')
+        t.end();
     }
   }
 });
 
 test('map page is returned successfully', (t)=>{
   request(app)
-  .get('/map')
-  .expect(200)
-  .expect('Content-Type', /html/)
-  .end(err, res)=>{
-    if(err)
-    t.error(err)
-  }else{
-    t.equal(res.result, 200, 'map page is returned successfully')
-    t.end();
-  }
+    .get('/map')
+    .expect(200)
+    .expect('Content-Type', /html/)
+    .end(err, res)=>{
+      if(err)
+        t.error(err)
+      }else{
+        t.equal(res.result, 200, 'map page is returned successfully')
+        t.end();
+      }
 });
 
 test('log out is returned successfully', (t)=>{
