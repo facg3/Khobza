@@ -3,49 +3,23 @@
 
     <table >
   <tr id="th1">
-    <th>firstName </th>
-    <th>order</th>
+    <th>Sandwish name</th>
+    <th>amount</th>
+    <!-- <th>Time</th> -->
+    <th>Note</th>
     <th>price</th>
-    <th>Totalprice</th>
     <th>Delete Order</th>
   </tr>
+  {{#each data}}
   <tr>
-    <td>Jill</td>
-    <td>Smith</td>
-    <td>50</td>
-    <td>50</td>
-    <td>
-  <button id="delete-btn" type="button" name="button">Delete</button>
-</td>
-
+    <td>{{name}}</td>
+    <td>{{amount}}</td>
+    <!-- <td>timex</td> -->
+    <td><input type="textarea" placeholder="EX : extra cheese in tost" name="" value=""></td>
+      <td>{{price}}</td>
+    <td><button id="delete-btn" type="button" name="button">Delete</button></td>
   </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td>
-    <td>94</td>
-        <td>50</td>
-        <td>
-      <button id="delete-btn" type="button" name="button">Delete</button>
-    </td>
-  </tr>
-  <tr>
-    <td>John</td>
-    <td>Doe</td>
-    <td>80</td>
-        <td>50</td>
-        <td>
-      <button id="delete-btn"  type="button" name="button">Delete</button>
-    </td>
-  </tr>
-  <tr>
-    <td>John</td>
-    <td>Doe</td>
-    <td>80</td>
-        <td>50</td>
-        <td>
-      <button id="delete-btn"  type="button" name="button">Delete</button>
-    </td>
-  </tr>
+  {{/each}}
 </table>
 
    <input id="confirm" type="submit" name="confirm" value="confirm">

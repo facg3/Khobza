@@ -1,5 +1,7 @@
 const hashpassword = require('./password.js');
 const auth = require('../model/query/auth.js');
+const jwt = require('jsonwebtoken');
+require('env2')('./config.env');
 const GETregister = (req,res, next)=>{
     res.render('register',{
       layout:false
@@ -13,7 +15,16 @@ const PostRegister = (req, res)=>{
   if (password === conPassword) {
     hashpassword.hashedPassword(password, (err, hash)=>{
       auth.insertData(name,number,hash,(err,response)=>{
-        res.redirect('/');
+        if (err) {
+          res.render('register',{error:true,mssg:'This account already exists',layout:false})
+        }
+      else  {const userData = {
+          id:response[0].id,
+          name:name
+        }
+        const token = jwt.sign(userData,process.env.SECRET_KEY);
+        res.cookie('accessToken',token);
+        res.redirect('/');}
       });
     });
   }else{
