@@ -20,7 +20,7 @@ const POSThomepage =(req,res)=>{
         console.log(err);
       }
       else {
-        res.status(200).render('homepage',{products:products});
+        res.status(200).render('homepage',{products:products,icon:true});
       }
     });
   });
