@@ -5,6 +5,7 @@ const verfiycookie = require('./verfiycookie');
 const suggestion = require('./suggestion');
 const cart = require('./cart');
 const map = require('./map.js');
+
 const logout = require('./logout');
 const express = require('express');
 const error = require('./error');
@@ -17,8 +18,12 @@ router.get('/',verfiycookie,homepage.homepage);
 router.post('/',verfiycookie,homepage.POSThomepage);
 router.get('/map',verfiycookie,map.map);
 router.get('/suggestion',verfiycookie,suggestion.suggestion);
+router.post('/suggestion',verfiycookie,suggestion.makesuggestion);
 router.get('/cart',verfiycookie,cart);
 router.get('/logout',logout);
+router.get('/users',verfiycookie,admin_panel_users.panel_users);
+router.get('/user-suggestions',verfiycookie,admin_panel_users.panel_suggestions);
+
 router.get('*',error);
 
 
