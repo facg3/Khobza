@@ -9,7 +9,7 @@ const logout = require('./logout');
 const express = require('express');
 const error = require('./error');
 const router = express.Router();
-router.get('/login',login.GETlogin);
+router.get('/login',login.Getlogin);
 router.post('/login',login.PostLogin);
 router.get('/register',register.GETregister);
 router.post('/register',register.PostRegister);
