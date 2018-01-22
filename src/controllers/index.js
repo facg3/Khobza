@@ -17,6 +17,7 @@ router.get('/',verfiycookie,homepage.homepage);
 router.post('/',verfiycookie,homepage.POSThomepage);
 router.get('/map',verfiycookie,map.map);
 router.get('/suggestion',verfiycookie,suggestion.suggestion);
+router.post('/suggestion',verfiycookie,suggestion.makesuggestion);
 router.get('/cart',verfiycookie,cart);
 router.get('/logout',logout);
 router.get('*',error);
