@@ -10,7 +10,6 @@ const GETlogin = (req,res)=>{
 const PostLogin = (req,res)=>{
   const { phone } = req.body;
   const password = req.body.password_l;
-  console.log(req.body)
   auth.selectData(phone,(err,data)=>{
     if(err) {console.log(err);}
     else if(data.length == 0){
