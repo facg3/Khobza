@@ -11,13 +11,13 @@
     <th>Delete Order</th>
   </tr>
   {{#each data}}
+
   <tr>
     <td>{{name}}</td>
     <td>{{amount}}</td>
-    <!-- <td>timex</td> -->
     <td><input type="textarea" placeholder="EX : extra cheese in tost" name="" value=""></td>
       <td>{{price}}</td>
-    <td><button id="delete-btn" type="button" name="button">Delete</button></td>
+      <td><button id="{{id}}" type="button" name="delete" class="delete">Delete</button></td>
   </tr>
   {{/each}}
 </table>

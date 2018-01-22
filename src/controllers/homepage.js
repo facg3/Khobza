@@ -11,9 +11,10 @@ queries.GetProduct((err , products)=>{
 }
 const POSThomepage =(req,res)=>{
   const { quantity, idproduct } = req.body;
-    queries.makeOrder(req.user.id,idproduct,quantity,(err,data)=>{
+  const quantityNo= quantity? quantity: 1;
+    queries.makeOrder(req.user.id,idproduct,quantityNo,(err,data)=>{
     if (err) {
-      res.redirect("/error");
+      res.render("error" , {error:err.toString() , layout:false});
     }else
     queries.GetProduct((err , products)=>{
       if(err){

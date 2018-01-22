@@ -35,7 +35,7 @@ CREATE TABLE orders (
   id SERIAL PRIMARY KEY,
   user_id INTEGER REFERENCES users (id),
   product_id INTEGER REFERENCES products (id),
-  amount INTEGER NOT NULL,
+  amount INTEGER DEFAULT 1,
   notes VARCHAR(250)
 
 );

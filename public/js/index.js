@@ -27,3 +27,37 @@ function initMap() {
     button.addEventListener("click", iconAnim);
   });
 })();
+
+
+//
+// function batata(id,tr){
+//   var xhr = new XMLHttpRequest();
+//   xhr.onreadystatechange = function(){
+//     if(xhr.status === 200 && xhr.readyState == 4){
+//     // tr.remove();
+//
+// }
+// }
+//   xhr.open("POST", '/delete' ,true);
+//   xhr.setRequestHeader('Content-Type', 'application/json');
+//   xhr.send(JSON.stringify({id}));
+// }
+
+
+const deleteButtons = document.getElementsByClassName('delete');
+const deleteC = Array.from(deleteButtons);
+console.log(Array.isArray(deleteButtons) ,"deleteButtons");
+deleteC.forEach((item,i)=>{
+  item.addEventListener('click',(e)=>{
+    const idOrder = e.target.id;
+    var xhr = new XMLHttpRequest();
+   xhr.onreadystatechange = function(){
+     if(xhr.status === 200 && xhr.readyState == 4){
+     // tr.remove();
+ }
+ }
+   xhr.open("POST", '/delete');
+   xhr.setRequestHeader('Content-Type', 'application/json');
+   xhr.send(JSON.stringify({idOrder}));
+  })
+})

@@ -4,17 +4,18 @@ const dbConnection = require('../databse/db_connection');
 const GetProduct = (cb) => {
   const sql = 'SELECT * FROM products';
   dbConnection.query(sql, (err, res) => {
-    if (err) cb(err);
+    if (err) return cb(err);
     cb(null, res.rows);
   });
 };
-const makeOrder = (iduser,idproduct,amount,cb) => {
+const makeOrder = (iduser,idproduct,amount ,cb) => {
   const sql = {
-    text:'INSERT INTO orders(user_id,product_id,amount) VALUES($1,$2,$3)',
+    text:'INSERT INTO orders(user_id,product_id,amount) VALUES($1,$2,$3) RETURNING * ',
     values:[iduser,idproduct,amount]
   };
+  console.log("SQL :",sql.values);
   dbConnection.query(sql, (err, res) => {
-    if (err) cb(err);
+    if (err) return cb(err);
     cb(null, res.rows);
   });
 };
@@ -28,7 +29,16 @@ const cart = (product_id,cb) => {
     cb(null, res.rows);
   });
 };
-
+const deleteOrder = (id,cb) => {
+  const sql = {
+    text:'DELETE FROM orders WHERE id = $1',
+    values:[id]
+  };
+  dbConnection.query(sql, (err, res) => {
+    if (err) cb(err);
+    cb(null, res.rows);
+  });
+};
 module.exports = {
-GetProduct,makeOrder,cart
+GetProduct,makeOrder,cart,deleteOrder
 };
