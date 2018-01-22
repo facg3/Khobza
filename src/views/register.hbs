@@ -21,21 +21,21 @@
                 <div class="form-row">
                     <label>
                         <span>Full name</span>
-                        <input type="text" name="name">
+                        <input type="text" name="name" id = "name" required>
                     </label>
                 </div>
 
                 <div class="form-row">
                     <label>
-                        <span>Phone Number</span>
-                        <input name="numb">
+                        <span>PhoneNumber: 059</span>
+                        <input name="numb" pattern = '^\d{7}$' id = "number" required>
                     </label>
                 </div>
 
                 <div class="form-row">
                     <label>
                         <span>Password</span>
-                        <input type="password" name="password">
+                        <input type="password" name="password" id = "password" required>
                     </label>
                 </div>
                 {{#if err}}
@@ -44,19 +44,20 @@
                 <div class="form-row">
                     <label>
                         <span>Confirm Password</span>
-                        <input type="password" name="password_conf">
+                        <input type="password" name="password_conf" id = "passwordcon" required>
                     </label>
                 </div>
 
                 <div class="form-row">
                     <label>
-                        <span>I agree on the <a>terms of service</a></span>
-                        <input type="checkbox" name="checkbox">
+                        <span>I agree on the <a href="#" style = "color:#5F5F5F;">terms of service</a></span>
+                        <input type="checkbox" name="checkbox" required>
                     </label>
                 </div>
 
                 <div class="form-row">
                     <button type="submit">Register</button>
+                    <h4 style = "text-align:center; margin-top:20px;">Already have an account? <a href="/login" style = "color:black;">Login!</a></h4>
                 </div>
 
             </form>
