@@ -9,23 +9,6 @@ function initMap() {
     map : map
   });
 }
-// (function () {
-//   var icon = document.querySelector(".icon"),
-//       buttons = document.querySelectorAll("form button"),
-//       isAnimate = false;
-//   function iconAnim() {
-//     if (isAnimate) {return; }
-//     icon.classList.add("icon-anim");
-//     isAnimate = true;
-//     setTimeout(function () {
-//       isAnimate = false;
-//       icon.classList.remove("icon-anim");
-//     }, 7000);
-//   }
-//   buttons.forEach(function (button) {
-//     button.addEventListener("click", iconAnim);
-//   });
-// })();
 const order = document.getElementById('submit');
 order.addEventListener('click',(e)=>{
   e.preventDefault();

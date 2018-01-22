@@ -17,7 +17,7 @@ const POSThomepage =(req,res)=>{
     }else
     queries.GetProduct((err , products)=>{
       if(err){
-        console.log(err);
+          res.redirect("/error");
       }
       else {
         res.status(200).render('homepage',{products:products,icon:true});

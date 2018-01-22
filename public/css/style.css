@@ -2,6 +2,11 @@
 	    -webkit-box-sizing: border-box;
 	    -moz-box-sizing: border-box;
 	    box-sizing: border-box;
+			font-family: "Rockwell Extra Bold", "Rockwell Bold", monospace;
+
+	}
+	body {
+		background-image: url(http://www.whiteowldj.com/wp-content/uploads/2014/07/background-gradient1.jpg);
 	}
 .container{
 	width: 1170px;
@@ -13,6 +18,7 @@
 #js-header .icons{
 	float: right;
 	padding: 2px;
+	margin-top: 4px;
 }
 #js-header .icons i{
 	padding-right: 7px;
@@ -51,16 +57,23 @@ main .main{
 
 .product .order .submit{
   width: 42%;
+	height : 35px;
 	border: none;
-	background-color: #ff6c00;
+	background-color: gold;
 	padding: 3px;
-	color: #fff;
+	color: green;
+	font-weight: 800;
+	border-style: solid;
 	float: right;
 	margin-right: 17px;
+	margin-top: 15px;
 }
 .product .order .number{
-width: 41%;
+width: 70px;
+height: 50px;
 float: left;
+margin-top: 25px;
+margin-left: 45px;
 }
 .continer {
   position: relative;
