@@ -1,6 +1,6 @@
 .suggestion{
 
-  background: #201d1d;
+  background: #D3D3D3;
 	border:1px solid #2d416d;
 	border-radius: 5px;
 	width: 50%;
@@ -9,7 +9,7 @@
   cursor: pointer;
 	padding: 50px 30px 0px 30px;
 	text-align: center;
- border-radius: 35px;
+  border-radius: 35px;
 }
 
 #send {
