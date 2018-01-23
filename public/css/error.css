@@ -1,5 +1,7 @@
 $color-base: #404853;
 
+
+
 svg#robot {
   display: block;
   position: relative;
@@ -208,8 +210,7 @@ html,
 body {
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
+  
   justify-content: center;
   overflow: hidden;
 }
@@ -217,6 +218,8 @@ body {
 body {
   background: black;
   font-family: 'Roboto Condensed', sans-serif;
+  background-image : url("https://media.giphy.com/media/4x0JkzUY659HW/giphy.gif");
+  text-align: center;
 }
 
 .col {

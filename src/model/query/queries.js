@@ -20,7 +20,13 @@ const makeOrder = (iduser,idproduct,amount,cb) => {
 };
 const cart = (product_id,cb) => {
   const sql = {
-    text:'SELECT orders.*,products.name ,products.price,products.description,users.name as username from orders,products,users where users.id=orders.user_id and products.id=orders.product_id and users.id=$1',
+    text:`SELECT
+    orders.*,products.name ,products.price,products.description,
+    users.name as username from orders,products,users
+    where
+    users.id=orders.user_id and
+    products.id=orders.product_id and
+    users.id=$1`,
     values:[product_id]
   };
   dbConnection.query(sql, (err, res) => {
@@ -29,15 +35,26 @@ const cart = (product_id,cb) => {
   });
 };
 
-const makesuggestion = (user_id,suggestion,cb) => {
+const deleteOrder = (product_id, user_id) =>{
   const sql = {
-    text:'INSERT INTO  suggestions(user_id ,suggestion) VALUES ($1,$2)',
-    values:[user_id , suggestion ]
+    text:'DELETE FROM orders WHERE users.id = $2 and products.id = $1',
+    values: [product_id,user_id]
   };
-  dbConnection.query(sql, (err, res) => {
-    if (err) cb(err);
+  dbConnection.query(sql, (err, res)=>{
+    if(err) cb(err);
     cb(null, res.rows);
   });
+};
+
+const ordersCount = (user_id) =>{
+  const sql = {
+    text: 'SELECT COUNT(user_id) FROM table_name WHERE user_id = $1;',
+    values : [user_id]
+  };
+dbConnection.query(sql, (err, res)=>{
+  if(err) cb(err);
+  cb(null, res.rows);
+});
 }
 
 
