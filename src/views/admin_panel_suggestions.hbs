@@ -4,14 +4,14 @@
 <head>
   <meta charset="utf-8">
   <title>Admin Panel - Orders</title>
-  <link rel="stylesheet" href="admin_panel_suggestions.css">
+  <link rel="stylesheet" href="./css/admin_panel_suggestions.css">
   <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;">
 
 
 </head>
 <div class="wrap">
-  		<a href="#" class="button anc" style = "float: right; margin-right: 4rem;">Users ➡</a>
-      <a href="#" class="button anc" style = "float: left; margin-left: 4rem;">⬅ Orders</a>
+  		<a href="/users" class="button anc" style = "float: right; margin-right: 4rem;">Users ➡</a>
+      <a href="/user-orders" class="button anc" style = "float: left; margin-left: 4rem;">⬅ Orders</a>
 </div>
   <body>
     <div class="table-title">
@@ -26,13 +26,15 @@
 
         </tr>
       </thead>
+      {{#each data}}
       <tbody class="table-hover">
         <tr>
-          <td class="text-left">Samar</td>
-          <td class="text-left">giv mi sandwhichez for free ples :)</td>
+          <td class="text-left">{{name}}</td>
+          <td class="text-left">{{suggestion}}</td>
         </tr>
 
       </tbody>
+      {{/each}}
     </table>
 
 

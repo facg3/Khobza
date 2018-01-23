@@ -25,9 +25,7 @@
 	/*cursor: pointer;*/
 	color: black;
 	}
-	#js-header .icons .fa:active {
-		color: #ff6c00;
-	}
+
 #js-header .logo{
 	float: left;
 }

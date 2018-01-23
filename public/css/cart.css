@@ -1,6 +1,6 @@
 
 center > h4 { color: #00a0d1; margin-top: 50px; }
-		body { margin: 0; font-family: Arial; background-color: #3498db; }
+		body { margin: 0; font-family: Arial; background-color: #ffffff; }
 		ul#growing-search-freebie { display: table; list-style: none; margin: auto auto 0 auto; padding: 0; }
 		ul#growing-search-freebie > li { float: left; margin-right: 20px; margin-bottom: 20px; padding: 10px 10px; }
 		ul#growing-search-freebie > li:last-child { margin-right: 0; }

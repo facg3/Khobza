@@ -1,4 +1,8 @@
-const map = (req,res)=>{
-  res.status(200).render('map');
+const map = (req, res) => {
+  res.status(200).render('map', {
+    colorMap: true
+  });
 }
-module.exports = {map}
+module.exports = {
+  map
+}

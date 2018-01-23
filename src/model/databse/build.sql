@@ -7,8 +7,11 @@ CREATE TABLE users (
   name VARCHAR(100) NOT NULL,
   phone_number INTEGER NOT NULL UNIQUE,
   password VARCHAR(100) NOT NULL,
-  banned BOOLEAN NOT NULL default false
+  banned BOOLEAN NOT NULL default false,
+  role VARCHAR(100) NOT NULL default 'user'
 );
+INSERT INTO users(name,phone_number,password,role)
+VALUES('Hani',0597123456,'$2a$10$aYdb8VPiGwRGdJT2Qs8mN.fVuveprC9hnChFaHcHJeDDfNRVzXQsG','admin');
 
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
