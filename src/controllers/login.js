@@ -11,7 +11,7 @@ const PostLogin = (req,res)=>{
   const { phone } = req.body;
   const password = req.body.password_l;
   auth.selectData(phone,(err,data)=>{
-    if(err) {console.log(err);}
+    if(err) {res.render("error", {layout:false})}
     else if(data.length == 0){
       res.render('login',{layout:false,err:true,msg:'You must register'});
     }else {

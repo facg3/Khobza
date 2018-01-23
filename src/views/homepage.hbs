@@ -10,14 +10,13 @@
         {{/if}}
         {{#each products}}
         <div class="product">
+
+
+
+
           <div class="continer">
             <img src={{url}} class="image">
-            <div class="overlay">
-              <h3 class="text">{{name}}</h3>
-              <p class="text">{{description}}</p>
-              <p class="text">{{price}} <span>S</span></p>
-
-            </div>
+            
           </div>
           <form class="order" method="post"  action="/">
             <input type="hidden" name="idproduct" value={{id}}>

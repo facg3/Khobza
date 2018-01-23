@@ -101,17 +101,17 @@ main .main {
 }
 
 .overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
+  position: fixed;
+  top: 38px;
+  bottom: -2px;
+  left: 540px;
+  right: 49px;
+  height: 38%;
+  width: 38%;
+  opacity: 41px;
+  /* transition: .5s ease; */
   border-radius: 2%;
-  background-color: rgba(255, 108, 0, 0.5);
+  background-color: #2d416d;
 }
 
 .continer:hover .overlay {
