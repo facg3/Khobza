@@ -15,7 +15,7 @@ a restaurant to order from.
 Our app gives the user the ability to customize their order through the 'notes' option we provide with the 'cofirm order' page.
 
 ## How to use our app:
-Get an account on our app. Go to the home page and sign up. 
+Get an account on our app. Go to the registration page and sign up. 
 Login, and browse the sandwiches. 
 
 Once you choose a sandwich and happy with your order, you can
