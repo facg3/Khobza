@@ -59,5 +59,5 @@ dbConnection.query(sql, (err, res)=>{
 
 
 module.exports = {
-GetProduct,makeOrder,cart, deleteOrder, ordersCount
-};
+GetProduct,makeOrder,cart
+, makesuggestion};
