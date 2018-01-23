@@ -1,5 +1,4 @@
-BEGIN;
-
+\c khobza_dev;
 DROP TABLE IF EXISTS users, products, orders, suggestions CASCADE;
 
 CREATE TABLE users (
@@ -45,7 +44,3 @@ CREATE TABLE suggestions (
   user_id INTEGER REFERENCES users (id),
   suggestion VARCHAR(250) NOT NULL
 );
-
-
-
-COMMIT;
