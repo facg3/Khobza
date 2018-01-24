@@ -32,7 +32,7 @@ const pcart = (req,res) =>{
       if (err) return res.render('error', {
         err: err
       });
-      res.render('cart');
+      res.render('cart',{massg:true});
     });
   }
  else {
@@ -41,8 +41,9 @@ const pcart = (req,res) =>{
       if (err) return res.render('error', {
         err: err
       });
-      res.status(200).render('cart');
     });
+    if(index === id.length - 1 )
+    res.status(200).render('cart',{massg:true});
 });
 }
 

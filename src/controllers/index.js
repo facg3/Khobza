@@ -16,7 +16,6 @@ const notification = require('./notification');
 const usernotification = require('./user_notification');
 const logout = require('./logout');
 const router = express.Router();
-console.log(usernotification);
 router.get('/login',login.GETlogin);
 router.post('/login',login.PostLogin);
 router.get('/register',register.GETregister);
