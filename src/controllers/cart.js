@@ -16,15 +16,35 @@ const cart = (req, res) => {
           colorCart:true
         });
       } else {
-        return res.status(200).render('cart', {
-          data: data,
-          totalprice: '0',
-          colorCart:true
-        });
+        return res.status(200).render('cart');
       }
 
     })
   });
 }
+const pcart = (req,res) =>{
+  const { note } = req.body;
+  const id = req.body.id_order
+  if(note == undefined && id ==undefined ){
+    res.render('cart');
+  }else if (typeof id == 'string') {
+    queries.updateOrder(note,id,(err,result)=>{
+      if (err) return res.render('error', {
+        err: err
+      });
+      res.render('cart');
+    });
+  }
+ else {
+   id.forEach((item,index)=>{
+    queries.updateOrder(note[index],item,(err,result)=>{
+      if (err) return res.render('error', {
+        err: err
+      });
+      res.status(200).render('cart');
+    });
+});
+}
 
-module.exports = cart
+}
+module.exports = {cart,pcart}

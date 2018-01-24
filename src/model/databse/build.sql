@@ -7,7 +7,6 @@ CREATE TABLE users (
   name VARCHAR(100) NOT NULL,
   phone_number INTEGER NOT NULL UNIQUE,
   password VARCHAR(100) NOT NULL,
-  banned BOOLEAN NOT NULL default false,
   role VARCHAR(100) NOT NULL default 'user'
 );
 INSERT INTO users(name,phone_number,password,role)
@@ -39,8 +38,9 @@ CREATE TABLE orders (
   user_id INTEGER REFERENCES users (id),
   product_id INTEGER REFERENCES products (id),
   amount INTEGER DEFAULT 1,
-  notes VARCHAR(250)
-
+  notes VARCHAR(250),
+  data_time VARCHAR(250) NOT NULL,
+  done BOOLEAN NOT NULL default false
 );
 
 CREATE TABLE suggestions (
@@ -48,7 +48,4 @@ CREATE TABLE suggestions (
   user_id INTEGER REFERENCES users (id),
   suggestion VARCHAR(250) NOT NULL
 );
-
-
-
 COMMIT;
