@@ -13,7 +13,7 @@ const cart = (req, res) => {
         return res.status(200).render('cart', {
           data: data,
           totalprice: totalprice[0].sum,
-          colorCart:true
+          colorCart:true,
         });
       } else {
         return res.status(200).render('cart');

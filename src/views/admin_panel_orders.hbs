@@ -26,19 +26,25 @@
           <th class="text-left">Quantity</th>
           <th class="text-left">Notes</th>
           <th class="text-left">Time Order</th>
+          <th class="text-left">Admin Notes</th>
           <th class="text-left">Done</th>
         </tr>
       </thead>
       <tbody class="table-hover">
         {{#each result}}
-        <tr>
-          <td class="text-left">{{user}}</td>
-          <td class="text-left">{{sandwish}}</td>
-          <td class="text-left">{{amount}}</td>
-          <td class="text-left">{{notes}}</td>
-          <td class="text-left">{{data_time}}</td>
-          <td class="text-left ready"><h4>Ready?</h4></td>
-        </tr>
+        <form class="" action="/notification" method="post">
+          <tr>
+            <td class="text-left">{{user}}</td>
+            <td class="text-left">{{sandwish}}</td>
+            <td class="text-left">{{amount}}</td>
+            <td class="text-left">{{notes}}</td>
+            <td class="text-left">{{data_time}}</td>
+            <td class="text-left"><input type="text" name="admin_notes" value=""></td>
+            <input type="hidden" name="user_id" value="{{user_id}}">
+            <input type="hidden" name="sandwish" value="{{sandwish}}">
+            <td class="text-left ready"><input type="submit" name="" value="Ready?"></td>
+          </tr>
+        </form>
         {{/each}}
       </tbody>
     </table>

@@ -12,8 +12,11 @@ const proveAdmin = require('./proveAdmin');
 const adminpanelorder = require('./admin_panel_order');
 const adminpanelusers = require('./admin_panel_users');
 const adminpanelsuggestions = require('./admin_panel_suggestions');
+const notification = require('./notification');
+const usernotification = require('./user_notification');
 const logout = require('./logout');
 const router = express.Router();
+console.log(usernotification);
 router.get('/login',login.GETlogin);
 router.post('/login',login.PostLogin);
 router.get('/register',register.GETregister);
@@ -29,8 +32,9 @@ router.post('/cart',verfiycookie,cart.pcart);
 router.get('/logout',logout);
 router.get('/users',verfiycookie,proveAdmin,adminpanelusers);
 router.get('/user-suggestions',verfiycookie,proveAdmin,adminpanelsuggestions);
-router.get('/user-orders',verfiycookie,proveAdmin,adminpanelorder)
-
+router.get('/user-orders',verfiycookie,proveAdmin,adminpanelorder);
+router.post('/notification',verfiycookie,notification);
+router.get('/user_notification',verfiycookie,usernotification)
 router.get('*',error);
 
 

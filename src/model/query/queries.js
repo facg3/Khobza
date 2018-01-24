@@ -8,6 +8,26 @@ const GetProduct = (cb) => {
     cb(null, res.rows);
   });
 };
+const GetNotificationByUser = (id,cb) => {
+  const sql = {
+    text:'SELECT * FROM notification where user_id=$1',
+    values:[id]
+  }
+  dbConnection.query(sql, (err, res) => {
+    if (err) return cb(err);
+    cb(null, res.rows);
+  });
+};
+const insertNotification = (iduser,notes,cb) => {
+  const sql = {
+    text:'INSERT INTO notification(user_id,notes) VALUES ($1,$2)',
+    values:[iduser,notes]
+};
+  dbConnection.query(sql, (err, res) => {
+    if (err) return cb(err);
+    cb(null, res.rows);
+  });
+};
 const makeOrder = (iduser,idproduct,amount,data_time ,cb) => {
   const sql = {
     text:'INSERT INTO orders(user_id,product_id,amount,data_time) VALUES($1,$2,$3,$4) RETURNING * ',
@@ -90,6 +110,6 @@ const userforadmin = (cb) =>{
 }
 module.exports = {
 GetProduct,makeOrder,cart,deleteOrder,makesuggestion ,
-allsuggestion,total
-,updateOrder,userforadmin
+allsuggestion,total,GetNotificationByUser
+,updateOrder,userforadmin,insertNotification
 };
