@@ -46,7 +46,11 @@ const PostLogin = (req, res) => {
     }
   });
 }
+<<<<<<< HEAD
 module.exports = {
   GETlogin,
   PostLogin
 }
+=======
+module.exports = {Getlogin,PostLogin}
+>>>>>>> 57527ffa8bed723807c5223d72c6d9914cc24199
