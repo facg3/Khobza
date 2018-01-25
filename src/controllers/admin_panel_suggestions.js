@@ -1,8 +1,8 @@
 const queries = require('../model/query/queries');
-
-const panel_users = (req,res)=>{
-  queries.user(req.user.id,(err,data)=>{
-     res.status(200).render('admin_panel_suggestions',{data:data});
+const panel_suggestions = (req,res)=>{
+  queries.allsuggestion((err,data)=>{
+    if(err) return res.render('error',{errpr:err.toString(),layout:false})
+     res.status(200).render('admin_panel_suggestions',{data,layout:false});
   });
   }
 
@@ -10,4 +10,4 @@ const panel_users = (req,res)=>{
 
 
 
-module.exports = {panel_suggestions}
+module.exports = panel_suggestions
