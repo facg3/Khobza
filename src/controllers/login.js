@@ -21,34 +21,32 @@ const PostLogin = (req, res) => {
         err: true,
         msg: 'You must register'
       });
+} else {
+  hashpassword.comparePassword(password, data[0].password, (err, isTrue) => {
+    if (isTrue) {
+      const userData = {
+        id: data[0].id,
+        name: data[0].name,
+        role: data[0].role
+      }
+      const token = jwt.sign(userData, process.env.SECRET_KEY);
+      if (data[0].role == 'user') {
+        res.cookie('accessToken', token).redirect('/');
+      } else {
+        res.cookie('accessToken', token).redirect('/user-orders');
+      }
     } else {
-      hashpassword.comparePassword(password, data[0].password, (err, isTrue) => {
-        if (isTrue) {
-          const userData = {
-            id: data[0].id,
-            name: data[0].name,
-            role: data[0].role
-          }
-          const token = jwt.sign(userData, process.env.SECRET_KEY);
-          if (data[0].role == 'user') {
-            res.cookie('accessToken', token).redirect('/');
-          } else {
-            res.cookie('accessToken', token).redirect('/user-orders');
-          }
-        } else {
-          res.render('login', {
-            layout: false,
-            err: true,
-            msg: 'Password is not correct'
-          });
-        }
+      res.render('login', {
+        layout: false,
+        err: true,
+        msg: 'Password is not correct'
       });
     }
   });
 }
-
-module.exports = {
-  GETlogin,
-  PostLogin
+});
 }
-
+module.exports = {
+GETlogin,
+PostLogin
+}
