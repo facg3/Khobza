@@ -16,6 +16,7 @@ const PostRegister = (req, res) => {
   const conPassword = req.body.password_conf;
   if (password === conPassword) {
     hashpassword.hashedPassword(password, (err, hash) => {
+      if(err) res.render('error',{layout:false,error:err.toString()})
       auth.insertData(name, number, hash, (err, response) => {
         if (err) {
           res.render('register', {
@@ -23,7 +24,7 @@ const PostRegister = (req, res) => {
             mssg: 'This account already exists',
             layout: false
           })
-          console.log("bullshit", err);
+
         } else {
           const userData = {
             id: response[0].id,
