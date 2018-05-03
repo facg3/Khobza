@@ -17,6 +17,7 @@ body {
     margin: 0 auto;
 }
 #js-header{
+    background-color: blue;
     overflow: hidden;
 }
 #js-header .icons{
@@ -45,9 +46,11 @@ main{
     margin: 80px 0 0 0;
     width: 32%;
     float: left;
+      border-radius: 100%
 }
 .product img{
     width: 250px;
+    border-radius: 100%
 
 }
 

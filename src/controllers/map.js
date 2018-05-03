@@ -1,6 +1,6 @@
 const map = (req, res) => {
   res.status(200).render('map', {
-    colorMap: true
+    colorMap: true,
   });
 }
 module.exports = {

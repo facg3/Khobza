@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users, products, orders, suggestions CASCADE;
+DROP TABLE IF EXISTS users, products, orders, suggestions, notification CASCADE;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
@@ -11,6 +11,10 @@ CREATE TABLE users (
 );
 INSERT INTO users(name,phone_number,password,role)
 VALUES('Hani',0597123456,'$2a$10$aYdb8VPiGwRGdJT2Qs8mN.fVuveprC9hnChFaHcHJeDDfNRVzXQsG','admin');
+
+INSERT INTO users(name,phone_number,password,role)
+VALUES('Mohammed',0592736648,'$2a$10$aYdb8VPiGwRGdJT2Qs8mN.fVuveprC9hnChFaHcHJeDDfNRVzXQsG','admin');
+
 
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
@@ -41,6 +45,12 @@ CREATE TABLE orders (
   notes VARCHAR(250),
   data_time VARCHAR(250) NOT NULL,
   done BOOLEAN NOT NULL default false
+);
+
+CREATE TABLE notification (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER REFERENCES users (id),
+  notes VARCHAR(250)
 );
 
 CREATE TABLE suggestions (

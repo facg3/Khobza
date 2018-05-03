@@ -6,8 +6,10 @@ const panel_users = (req,res)=>{
       if(usersWithTotals[userOrder.user_id] == undefined) {
         usersWithTotals[userOrder.user_id] = userOrder;
         userOrder.totalSpent = 0;
+        userOrder.totalOrders = 0;
       }
       usersWithTotals[userOrder.user_id].totalSpent += userOrder.price;
+      usersWithTotals[userOrder.user_id].totalOrders += 1;
       return usersWithTotals;
     }, {})
     const users = Object

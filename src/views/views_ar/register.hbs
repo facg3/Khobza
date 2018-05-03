@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Khobza</title>
+    <link rel="stylesheet" href="./css/homepage-register.css">
+  </head>
+  <body>
+
+
+        <div class="main-content">
+
+            <form class="form-basic" method="post" action="/register">
+              <img src="https://i.imgur.com/KFWF7FX.png" alt="" style="width: 220px;">
+                <div class="form-title-row">
+                    <h1>إنشاء حساب</h1>
+                </div>
+                {{#if error}}
+                <p>{{mssg}}</p>
+                {{/if}}
+                <div class="form-row">
+                    <label>
+                        <span>الإسم كامل</span>
+                        <input type="text" name="name" id = "name" required>
+                    </label>
+                </div>
+
+                <div class="form-row">
+                    <label>
+                        <span>رقم الهاتف</span>
+                        <input name="numb" pattern = '^\d{7}$' id = "number" required>
+                    </label>
+                </div>
+
+                <div class="form-row">
+                    <label>
+                        <span>كلمة مرور جديدة</span>
+                        <input type="password" name="password" id = "password" required>
+                    </label>
+                </div>
+                {{#if err}}
+                <p>{{mssg}}</p>
+                {{/if}}
+                <div class="form-row">
+                    <label>
+                        <span>تأكيد كلمة المرور</span>
+                        <input type="password" name="password_conf" id = "passwordcon" required>
+                    </label>
+                </div>
+
+                <div class="form-row">
+                    <label>
+                        <span>أوافق على <a href="#" style = "color:#5F5F5F;">شروط الإستخدام</a></span>
+                        <input type="checkbox" name="checkbox" required>
+                    </label>
+                </div>
+
+                <div class="form-row">
+                    <button type="submit">تسجيل</button>
+                    <h4 style = "text-align:center; margin-top:20px;">لديك حساب? <a href="/login" style = "color:black;">سجل دخولك!</a></h4>
+                </div>
+
+            </form>
+
+        </div>
+
+  </body>
+</html>

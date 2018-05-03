@@ -4,10 +4,12 @@
   "description": "Khobza is a web app that is meant to help GSG staff and visitors order sandwiches from the cafeteria of GSS during the lunchtime. The main focus of the app is to eliminate distraction resulting from leaving one's desk to get a sandwich. With our app, the users will save time and effort.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run create-tables && node tests/runner.js",
     "start": "node ./src/index.js",
     "start:watch": "nodemon ./src/index.js",
-    "database": "node ./src/model/databse/build.js"
+    "database": "node ./src/model/databse/build.js",
+
+    "create-tables":"psql -c '\\i src/model/databse/build.sql; '"
   },
   "repository": {
     "type": "git",
@@ -35,6 +37,8 @@
   },
   "devDependencies": {
     "eslinter": "^3.2.1",
-    "nodemon": "^1.14.11"
+    "nodemon": "^1.14.11",
+    "supertest": "^3.0.0",
+    "tape": "^4.8.0"
   }
 }

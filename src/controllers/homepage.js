@@ -4,9 +4,16 @@ const homepage = (req, res) => {
     if (err) {
       res.redirect("/error");
     } else {
-      res.render('homepage', {
-        products: products
-      });
+      if(req.user.role === 'admin'){
+        res.render('homepage', {
+          products: products,
+          admin:true
+        });
+      }else{
+        res.render('homepage', {
+          products: products
+        });
+      }
     }
   });
 }

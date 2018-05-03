@@ -1,0 +1,48 @@
+.masthead {
+  padding: 1em 0;
+  background-image: url("https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/106399/1360/906/m1/fpnw/wm1/crsrxfllostehmuxwzqfkdarpcg0di40toehyl4mzmgrkmy3dpfzxttukvsmluvp-.jpg?1399222059&s=03c56cfefe73aeacb2fbc4ddb87e7644");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  font-family: raleway, sans-serif;
+  text-align: center;
+  height: 650px;
+}
+.top-navigation > ul > li {
+  display: inline-block;
+  float: right;
+  padding-right: 1em;
+  font-size: 1.15em;
+}
+a:-webkit-any-link{
+  text-decoration: none;
+  color : #fff;
+}
+ .masthead .top-navigation .home {
+  font-weight: 900;
+}
+.top-navigation > ul > li:hover {
+  color: #D3D3D3; cursor: pointer; }
+   .masthead-name {
+  text-align: center;
+  font-size: 3.5em;
+  font-weight: 100;
+}
+.masthead-job {
+  font-size: 1.75em;
+  font-weight: 100;
+  margin-top: -1em;
+}
+.heading {
+  padding-top: 10em;
+}
+.overlay{
+  background-color:rgba(0,0,0,0.7);
+  position:absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  height:100vh;
+  width:100%
+}
